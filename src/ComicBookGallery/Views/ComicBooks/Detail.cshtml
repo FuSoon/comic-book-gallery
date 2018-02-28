@@ -16,21 +16,32 @@
 
 <!DOCTYPE html>
 
-<html>
+<html>	
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
 </head>
 <body>
-    <div>
+	<div>
 		<h1>@seriesTitle</h1>
 		<h2>Issue #@issueNumber</h2>
 
 		<h5>Description : </h5>
 		<div>@Html.Raw(description)</div>
 
+		@if (artists.Length>0)
+	{
 		<h5>Artist :</h5>
-		<div>@artists</div>
-    </div>
+		<div>
+			<ul>
+				@foreach (var artist in artists)
+			{
+				<li>@artist</li>
+		}
+			</ul>
+		</div>
+}
+
+	</div>
 </body>
 </html>
